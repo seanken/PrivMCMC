@@ -2,7 +2,7 @@
 
 This repository contains the code for the PrivMCMC package. This package takes in genotype and phenotype data, and allows a use to estimate the privacy loss by releasing statistics related to that data. Here, the loss of privacy is measured in terms of posterior probabilities (see our manuscript for details).
 
-Dependencies:
+**Dependencies:**
 
 This package has numerous dependencies, namely:
 1) pysnptools
@@ -10,7 +10,7 @@ This package has numerous dependencies, namely:
 3) scipy
 4) matplotlib
 
-Running an Analysis with MAF or Log Odds Ratio:
+**Running an Analysis with MAF or Log Odds Ratio:**
 
 The simplest case for how to use the package is when releasing MAF or Log Odds Ratio. In particular, the package assumes SNP and disease data (present as a binary plink format).
 
@@ -32,7 +32,7 @@ results=marg.getMarginals(burnIn=100000)
 
 here, burnIn is the burn-in used by the MCMC algorithm. The returned list, results, has one entry for each individual in the data set. This entry is the estimated posterior probability of that individual being in the case cohort given the released statistics.
 
-Other Statistics:
+**Other Statistics:**
 
 Our implementation also allows novel statistics, not just MAF and LogOdds. In order to do this, a use must create a Class that extends the Analysis class. This class must implement two methods:
 
@@ -48,6 +48,6 @@ Note that the Analysis class has some built in variables, namely self.BED (A bed
 
 To see an example of how this is done, look at the MAF_Analysis and Log_Odd_Analysis classes in Analysis.py. More detail will be added at a later time.
 
-Other files:
+**Other files:**
 
 The remaining files were the ones used to generate the figures used in the manuscript, and some simple test cases/ sanity checks on the different functions in PrivMCMC. We do not give a detailed overview of them here.
